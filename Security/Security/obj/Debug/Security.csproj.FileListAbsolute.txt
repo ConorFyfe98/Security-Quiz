@@ -1,0 +1,14 @@
+D:\Security\Security\bin\Debug\SecurityDB.mdf
+D:\Security\Security\bin\Debug\SecurityDB_log.ldf
+D:\Security\Security\bin\Debug\Security.exe.config
+D:\Security\Security\bin\Debug\Security.exe
+D:\Security\Security\bin\Debug\Security.pdb
+D:\Security\Security\obj\Debug\Security.csprojResolveAssemblyReference.cache
+D:\Security\Security\obj\Debug\Security.Form1.resources
+D:\Security\Security\obj\Debug\Security.Properties.Resources.resources
+D:\Security\Security\obj\Debug\Security.csproj.GenerateResource.cache
+D:\Security\Security\obj\Debug\Security.csproj.CoreCompileInputs.cache
+D:\Security\Security\obj\Debug\Security.exe
+D:\Security\Security\obj\Debug\Security.pdb
+D:\Security\Security\obj\Debug\Security.Main.resources
+D:\Security\Security\obj\Debug\Security.GameOver.resources
