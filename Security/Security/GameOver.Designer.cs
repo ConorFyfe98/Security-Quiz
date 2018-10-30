@@ -56,6 +56,7 @@
             this.failMessageLabel.TabIndex = 1;
             this.failMessageLabel.Text = "You were fired!";
             this.failMessageLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.failMessageLabel.Click += new System.EventHandler(this.failMessageLabel_Click);
             // 
             // failPicture
             // 

@@ -34,5 +34,10 @@ namespace Security
             Main mm = new Main();
             mm.Show();
         }
+
+        private void failMessageLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

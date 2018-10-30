@@ -19,7 +19,7 @@ namespace Security
 
         private void button2_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = D:\Security\Security\SecurityDB.mdf; Integrated Security = True");
+            SqlConnection conn = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = E:\Security\Security\SecurityDB.mdf; Integrated Security = True");
             SqlDataAdapter sda = new SqlDataAdapter("select count(*) from users where username='" + textBox1.Text + "' and password='" + textBox2.Text + "'", conn);
             DataTable dt = new DataTable();
             sda.Fill(dt);

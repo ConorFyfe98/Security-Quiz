@@ -31,7 +31,7 @@ namespace Security
             string stmt = "SELECT COUNT(*) FROM Questions";
             int count = 0;
 
-            using (SqlConnection thisConnection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = D:\Security\Security\SecurityDB.mdf; Integrated Security = True"))
+            using (SqlConnection thisConnection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = E:\Security\Security\SecurityDB.mdf; Integrated Security = True"))
             {
                 using (SqlCommand cmdCount = new SqlCommand(stmt, thisConnection))
                 {
@@ -42,7 +42,7 @@ namespace Security
             
             if(QuestionID > count)
             {
-                gameOver();
+                gameComplete();
             }
 
         }
@@ -52,7 +52,7 @@ namespace Security
         public  String loadQuestions()
         {
             //String Answer="";
-            SqlConnection conn = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = D:\Security\Security\SecurityDB.mdf; Integrated Security = True");
+            SqlConnection conn = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = E:\Security\Security\SecurityDB.mdf; Integrated Security = True");
             conn.Open();
 
            
@@ -78,7 +78,7 @@ namespace Security
         {
             //String Answer="";
             QuestionID = QuestionID + 1;
-            SqlConnection conn = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = D:\Security\Security\SecurityDB.mdf; Integrated Security = True");
+            SqlConnection conn = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = E:\Security\Security\SecurityDB.mdf; Integrated Security = True");
             conn.Open();
 
 
@@ -129,7 +129,7 @@ namespace Security
         public void increaseThreat()
         {
             threatBar.Value = threatBar.Value  + 1;
-            if(threatBar.Value >=2)
+            if(threatBar.Value >=5)
             {
                 FailMessage = "You were fired! You let the threat become too high.";
                 gameOver();
@@ -144,17 +144,25 @@ namespace Security
 
         }
 
+        public void gameComplete()
+        {
+            this.Hide();
+            GameComplete gm = new GameComplete();
+            gm.Show();
+
+        }
+
         private void optAButton_Click(object sender, EventArgs e)
         {
             if (optAButton.Text == Answer){
-                MessageBox.Show("Correct");
+                
                 loadNextQuestion();
                 increaseRepuatation();
                 questionCount();
             }
             else
             {
-                MessageBox.Show("Wrong");
+                
                 loadNextQuestion();
                 decreaseRepuatation();
                 increaseThreat();
@@ -166,14 +174,12 @@ namespace Security
         {
             if (optBButton.Text == Answer)
             {
-                MessageBox.Show("Correct");
                 loadNextQuestion();
                 increaseRepuatation();
                 questionCount();
             }
             else
             {
-                MessageBox.Show("Wrong");
                 loadNextQuestion();
                 decreaseRepuatation();
                 increaseThreat();
